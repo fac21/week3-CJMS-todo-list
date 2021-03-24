@@ -5,3 +5,6 @@ Week 3 Project: To Do List
 - User: Michael
 - Facilitator: Chun
 - Quality: Saki
+
+
+![]("images/todo list.jpeg")
