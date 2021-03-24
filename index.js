@@ -9,7 +9,11 @@ addButton.addEventListener("click", (event) => {
 });
 
 function submitTask() {
-    let newItem = document.createElement("li");
-    newItem.innerText = newTodo.value;
-    taskList.append(newItem);
+    let temp = document.getElementsByTagName("template")[0];
+    let clone = temp.content.cloneNode(true);
+    clone.children[1].innerText = newTodo.value;
+    taskList.appendChild(clone);
 }
+
+
+   
