@@ -4,12 +4,17 @@ addButton.addEventListener("click", (event) => {
     submitTask();
 });
 
-
 const newTodo = document.getElementById("new-to-do");
 const taskList = document.getElementById("task-list");
 
 function submitTask() {
-    let newItem = document.createElement("li");
-    taskList.append(newItem);
-    newItem.innerText = newTodo.value;
+    let temp = document.getElementsByTagName("template")[0];
+    let clone = temp.content.cloneNode(true);
+    clone.children[1].innerText = newTodo.value;
+    taskList.appendChild(clone);
 }
+
+
+    
+
+  
