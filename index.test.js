@@ -8,6 +8,7 @@ test("Submitting a new task adds it to the list", () => {
     equal(listItem.children[1].textContent, input.value) //children[1] refers to label
   }
   input.textContent = "";
+
 });
 
   test("Checking an entry marks it as complete", () => {
@@ -15,5 +16,10 @@ test("Submitting a new task adds it to the list", () => {
   });
 
   test("Deleting an entry removes it from the list", () => {
-    // test goes here
+  const taskList = document.querySelector('#task-list');
+  const deleteBtn = document.querySelector("button[type='button']");
+  deleteBtn.click(); 
+  equal(taskList.children.length, 1)
   });
+
+  
