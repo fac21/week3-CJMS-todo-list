@@ -38,7 +38,7 @@ function submitTask() {
 
 window.addEventListener("load", () => {
         let randomNum = Math.floor(Math.random() * 10);
-        fetch(`https://api.unsplash.com/photos/random?client_id=mtXzGZBpq9Gzv9wHdPMec37TIy6h6ZVclhfkxVRvygY&orientation=portrait`)
+        fetch(`https://api.unsplash.com/photos/random?query=landscape&client_id=mtXzGZBpq9Gzv9wHdPMec37TIy6h6ZVclhfkxVRvygY&orientation=portrait`)
             .then((response) => {
                 if (!response.ok) throw new Error(response.status);
                 return response.json()
