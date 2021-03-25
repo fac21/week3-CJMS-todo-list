@@ -9,13 +9,11 @@ console.log(taskList)
 taskList.addEventListener('click',function(event){
     let targetElement = event.target
     let selector = 'button';
-    while(targetElement != null) {
-        if(targetElement.matches(selector)) {
-            targetElement = targetElement.parentElement;
-            console.log(targetElement)
-            targetElement.remove()
-            return;
-        }
+    if(targetElement.matches(selector)) {
+        targetElement = targetElement.parentElement;
+        console.log(targetElement)
+        targetElement.remove()
+        return;
     }
 },true);
 
