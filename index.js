@@ -2,11 +2,9 @@
 const addButton = document.querySelector("#add-button");
 const newTodo = document.getElementById("new-to-do");
 const taskList = document.getElementById("task-list");
-// const deleteBtns = document.querySelectorAll(".deleteBtn");
-// const deleteBtn = document.querySelector(".deleteBtn");
-console.log(taskList)
 
-taskList.addEventListener('click',function(event){
+//This adds an event listener to the entire list 
+taskList.addEventListener('click', function(event){
     let targetElement = event.target
     let selector = 'button';
     if(targetElement.matches(selector)) {
@@ -26,32 +24,11 @@ function submitTask() {
     let temp = document.getElementsByTagName("template")[0];
     let clone = temp.content.cloneNode(true);
     clone.querySelector("label").textContent = newTodo.value;
+    clone.querySelector(".deleteBtn").addEventListener("click", (event) => {
+    event.target.parentElement.remove();
+    })
     taskList.appendChild(clone);
 }
-
-// deleteBtns.forEach(x => {
-//     console.log('hello')
-//     x.addEventListener("click", (event) => {
-//         event.preventDefault()
-//         deleteTask(x)
-//     })
-// })
-
-// if(article) {
-//     deleteBtn.addEventListener("click", (event) => {
-//             event.preventDefault()
-//             deleteTask()
-//     })
-// }
-
-// function deleteTask(e) {
-//     e.preventDefault()
-
-//     console.log('hello')
-    //find the corresponding article 
-    // btn.parentNode.remove()
-    //and delete
-// }
 
 //Image API
 
@@ -68,8 +45,4 @@ window.addEventListener("load", () => {
                 document.querySelector('.bg-image').src = data.urls.regular;
             })
             .catch((error) => console.log(error));
-    // }
 });
-
-
-   
