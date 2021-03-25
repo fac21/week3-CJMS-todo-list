@@ -129,10 +129,10 @@
 
   .task{
     border: 1px solid rgb(228, 222, 222);
-    margin-top: 1rem;
     padding: 1rem;
     background-color: white;
     border-radius: 20px;
+    margin: 1rem;
   }
 
   button {
@@ -149,12 +149,8 @@
     width: 1.25rem;
   }
 
-  main {
-    width: 50vw;
-  }
-
   section {
-    width: 40vw;
+    max-width: 80vw;
     margin: 0 auto 3rem auto;
     position: relative;
     top: 2rem;
@@ -166,5 +162,5 @@
 
   .todo {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
