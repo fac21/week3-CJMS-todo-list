@@ -2,6 +2,7 @@
 const addButton = document.querySelector("#add-button");
 const newTodo = document.getElementById("new-to-do");
 const taskList = document.getElementById("task-list");
+let counter = 0;
 
 //This adds an event listener to the entire list 
 taskList.addEventListener('click', function(event){
@@ -17,13 +18,16 @@ taskList.addEventListener('click', function(event){
 
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
+    counter++;
     submitTask();
 });
 
 function submitTask() {
+    console.log(counter);
     let temp = document.getElementsByTagName("template")[0];
     let clone = temp.content.cloneNode(true);
     clone.querySelector("label").textContent = newTodo.value;
+    clone.querySelector("input").id = "checkbox" + counter;
     clone.querySelector(".deleteBtn").addEventListener("click", (event) => {
     event.target.parentElement.remove();
     })
