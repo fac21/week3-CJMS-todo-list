@@ -7,7 +7,11 @@ let counter = 0;
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
     counter++;
-    submitTask();
+    if(counter < 9) {
+        submitTask();
+    } else {
+        return;
+    }
 });
 
 function submitTask() {
