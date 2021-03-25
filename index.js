@@ -26,7 +26,6 @@ function submitTask() {
     let temp = document.getElementsByTagName("template")[0];
     let clone = temp.content.cloneNode(true);
     clone.querySelector("label").textContent = newTodo.value;
-    // clone.children[1].innerText = newTodo.value;
     taskList.appendChild(clone);
 }
 
