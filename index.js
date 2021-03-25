@@ -53,5 +53,23 @@ function submitTask() {
     //and delete
 // }
 
+//Image API
+
+window.addEventListener("load", () => {
+        let randomNum = Math.floor(Math.random() * 10);
+        fetch(`https://api.unsplash.com/photos/random?client_id=mtXzGZBpq9Gzv9wHdPMec37TIy6h6ZVclhfkxVRvygY&orientation=portrait`)
+            .then((response) => {
+                if (!response.ok) throw new Error(response.status);
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data)
+                console.log(data.urls.regular)
+                document.querySelector('.bg-image').src = data.urls.regular;
+            })
+            .catch((error) => console.log(error));
+    // }
+});
+
 
    
