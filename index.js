@@ -20,6 +20,7 @@ function submitTask() {
     docFrag.querySelector("label").textContent = newTodo.value; //add label
     var labels = docFrag.querySelector("label")
     docFrag.querySelector("input").id = "checkbox" + counter; //add unique id 
+    docFrag.querySelector("label").htmlFor = "checkbox" + counter;
     docFrag.querySelector(".deleteBtn").addEventListener("click", (event) => {
     event.target.parentElement.remove();
     })
