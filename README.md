@@ -18,3 +18,7 @@
 
 ![Accessibility check](https://user-images.githubusercontent.com/31373245/112510796-b1ebf900-8d89-11eb-9698-062da9dcbca2.png)
 
+## Improvements to make 🌱
+- The API only allows a certain number of calls per hour, so we added a default image if we reached the limit. But the default image always pops up for one second before the new image loads. Could fix this by lowering resolution of images. 
+- Filter functionality to move completed items to bottom of list. 
+- Allow background image to cover entire screen even after adding multiple tasks. 
