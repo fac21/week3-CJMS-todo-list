@@ -6,11 +6,11 @@ let counter = 0;
 
 addButton.addEventListener("click", (event) => {
     event.preventDefault();
-    counter++;
-    if(counter < 9) {
-        submitTask();
+    if(newTodo.value === "") {
+        alert("You must add a task!");
     } else {
-        return;
+        counter++;
+        submitTask();
     }
 });
 
@@ -18,29 +18,26 @@ function submitTask() {
     let temp = document.getElementsByTagName("template")[0];
     let docFrag = temp.content.cloneNode(true); //makes a clone of template 
     docFrag.querySelector("label").textContent = newTodo.value; //add label
-    var labels = docFrag.querySelector("label")
     docFrag.querySelector("input").id = "checkbox" + counter; //add unique id 
     docFrag.querySelector("label").htmlFor = "checkbox" + counter;
     docFrag.querySelector(".deleteBtn").addEventListener("click", (event) => {
     event.target.parentElement.remove();
     })
     
-    let checkboxes = docFrag.querySelector("input")
-    checkboxes.addEventListener('change', () => {
-        if (checkboxes.checked){
-            labels.style.textDecoration = "line-through"
-        } else{
-            labels.style.textDecoration = "none"
+    var label = docFrag.querySelector("label")
+    let checkbox = docFrag.querySelector("input")
+    checkbox.addEventListener('change', () => {
+        if (checkbox.checked){
+            label.style.textDecoration = "line-through"
+        } else {
+            label.style.textDecoration = "none"
         }
     })
     
-
-    
-    
     taskList.appendChild(docFrag);
+    document.querySelector("#new-to-do").value = "";
+
 }
-
-
 
 //Image API
 
