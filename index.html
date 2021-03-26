@@ -14,28 +14,31 @@
   <img class='bg-image' src="images/background-image.jpeg" alt='random image'>
 
   <main class="center">
+
     <section>
-      <header class="center">
+      <header>
         <h1>To Do List</h1>
       </header>
-        <form class="add center" id="add-task">
-            <label class="todo" for ="new-to-do">Add New Task</label>
-            <input type="text" id="new-to-do" name="new-to-do" required>
-            <button id ="add-button" type="submit">Add</button>
-        </form>
+
+      <form class="add center" id="add-task">
+          <label class="todo" for ="new-to-do">Add New Task</label>
+          <input type="text" id="new-to-do" name="new-to-do" required>
+          <button id ="add-button" type="submit">Add</button>
+      </form>
     </section>
     
-      <output>
-        <form id="task-list">
-              <template id="my-paragraph">
-                <article class="task center grid">
-                  <input type="checkbox" id="checkbox">
-                  <label for="checkbox"></label>
-                  <button class="deleteBtn" type='button'>Delete</button>
-                </article>
-              </template>
-        </form>
-      </output>
+    <output>
+      <form id="task-list">
+            <template id="my-paragraph">
+              <article class="task center grid">
+                <input type="checkbox" id="checkbox">
+                <label for="checkbox"></label>
+                <button class="deleteBtn" type='button'>Delete</button>
+              </article>
+            </template>
+      </form>
+    </output>
+    
   </main>
     <script src="test-helpers.js"></script>
     <script src="index.js"></script>
