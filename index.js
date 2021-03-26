@@ -1,7 +1,7 @@
-
 const addButton = document.querySelector("#add-button");
-const newTodo = document.getElementById("new-to-do");
-const taskList = document.getElementById("task-list");
+const newTodo = document.querySelector("#new-to-do");
+const taskList = document.querySelector("#task-list");
+let temp = document.getElementsByTagName("template")[0];
 let counter = 0;
 
 addButton.addEventListener("click", (event) => {
@@ -15,17 +15,16 @@ addButton.addEventListener("click", (event) => {
 });
 
 function submitTask() {
-    let temp = document.getElementsByTagName("template")[0];
     let docFrag = temp.content.cloneNode(true); //makes a clone of template 
-    docFrag.querySelector("label").textContent = newTodo.value; //add label
-    docFrag.querySelector("input").id = "checkbox" + counter; //add unique id 
-    docFrag.querySelector("label").htmlFor = "checkbox" + counter;
+    let label = docFrag.querySelector("label")
+    let inputTxt = docFrag.querySelector("input")
+    label.textContent = newTodo.value; //add label
+    inputTxt.id = "checkbox" + counter; //add unique id 
+    label.htmlFor = "checkbox" + counter;
     docFrag.querySelector(".deleteBtn").addEventListener("click", (event) => {
-    event.target.parentElement.remove();
+        event.target.parentElement.remove();
     })
-    
-    var label = docFrag.querySelector("label")
-    let checkbox = docFrag.querySelector("input")
+    let checkbox = inputTxt;
     checkbox.addEventListener('change', () => {
         if (checkbox.checked){
             label.style.textDecoration = "line-through"
@@ -33,10 +32,8 @@ function submitTask() {
             label.style.textDecoration = "none"
         }
     })
-    
     taskList.appendChild(docFrag);
     document.querySelector("#new-to-do").value = "";
-
 }
 
 //Image API
