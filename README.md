@@ -1,14 +1,16 @@
 # Week 3 Project: To Do List
 
 ## Roles: :brain:
-- Deployment: Jo
-- User: Michael
-- Facilitator: Chun
-- Quality: Saki
+- Facilitator: [Chun](https://github.com/chunzg)
+- Deployment: [Jo](https://github.com/jamdelion)
+- User: [Michael](https://github.com/michael-devlin)
+- Quality: [Saki](https://github.com/haginom)
 
-## Features ✔️
+---
 
 ![Screen Shot 2021-03-25 at 16 36 25](https://user-images.githubusercontent.com/23028288/112509369-4fdec400-8d88-11eb-8739-4eeee857f650.png)
+
+## Features ✔️
 
 - Random changing background image (via API) ✔️
 - Checkbox to mark items as completed ✔️
